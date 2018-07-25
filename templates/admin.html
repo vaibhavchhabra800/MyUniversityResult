@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ADMIN</title>
+    {%  load staticfiles %}
+     <script src="{% static 'bootstrap-3.3.7-dist/Jquery/jquery.js' %}"></script>
+
+        <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.min.js'%}"></script>
+        <link rel="stylesheet" type="text/css" href="{%  static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{%  static 'mainpagestylesheet/mainpagestyle.css' %}">
+        <link rel="stylesheet" type="text/css" href="{%  static 'adminstyle/admin.css' %}">
+
+
+</head>
+<body>
+        <table id ='uploads'>
+            <tr id="tbchnggreem">
+                <th class="th">File Name</th>
+                <th class="th">Date</th>
+                <th class="th">Sent By</th>
+                <th class="th">Delete File</th>
+            </tr>
+
+            <?php
+
+            include('../gogo/connect.inc.php');
+
+
+            $query2="select * from userfiles where by_admin=0;";
+            $queryresult=mysql_query( $query2, $conn );
+
+            if($queryresult)
+            {
+                while ($row = mysql_fetch_array($queryresult, MYSQL_ASSOC))
+                {
+                    $file_name = $row['file_name'];
+                    $date_added = $row['date_added'];
+                    $sent_by = $row['sent_by'];
+
+                    ?>
+
+                    <tr class="tbhovchngcol">
+
+                        <td class="td"><a href ="./recievedfiles/<?php echo $sent_by?>/<?php echo $file_name ?>"><?php echo $file_name?></a></td>
+                        <td class="td"><?php echo $date_added ?></td>
+                        <td class="td"><?php echo $sent_by ?></td>
+                        <td class="td"><a href="deleteafile.php?filetobedeleted=./recievedfiles/<?php echo $sent_by ?>/<?php echo $file_name; ?>&filetobedeletedname=<?php echo $file_name; ?>&sent_by=<?php echo $sent_by; ?>"><img id="deletefile" src="../teamfotos/Close-icon.png"></a></td>
+                    </tr>
+
+
+                <?php
+                }
+            }
+            else{
+                die("Couldn't get data ".mysql_error());
+            }
+            mysql_query($query2);
+
+            mysql_close($conn);
+
+
+            ?>
+
+
+        </table>
+
+</body>
+</html>

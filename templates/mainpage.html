@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>Brexit Official</title>
+    <meta charset="UTF-8">
+    {%  load staticfiles %}
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="{% static 'bootstrap-3.3.7-dist/Jquery/jquery.js' %}"></script>
+
+        <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.min.js'%}"></script>
+        <link rel="stylesheet" type="text/css" href="{%  static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{%  static 'mainpagestylesheet/mainpagestyle.css' %}">
+
+
+
+    </head>
+    <body>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+
+             <div class="container">
+            <div class="row">
+                <nav class="navbar navbar-default  navbar-fixed-top">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"  data-target="#nav1collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+
+                        </button>
+                    </div>
+               <div class="collapse navbar-collapse" id="nav1collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="{% url 'mainpage' %}">Home</a> </li>
+                    <li><a href="{% url 'user1' %}">RESULT</a> </li>
+                </ul>
+             </div>
+          </nav>
+        </div>
+            </div>
+
+
+        <div class="container">
+            <div class="container">
+
+                    <div class="jumbotron">
+                             <h4 class="text-center">WELCOME TO BREXIT UNIVERSITY</h4>
+                              <br>
+                              <br>
+                        <div class="col-md-4 center-block"></div>
+
+                            <div class="col-md-4 text-center">
+                              <button  type="button" class="btn btn-success btn-lg pagination-centered " >Check Result</button>
+                            </div>
+                        <br>
+                        <br>
+
+            </div>
+
+
+      </div><!-- end of container div -->
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+            </div>
+    <div id="footer">
+            <br>
+            <p id="contactus" class="wow bounceInLeft">CONTACT US</p>
+
+            <a id="end" class="wow bounceInLeft" href="https://www.google.co.in/?gfe_rd=cr&ei=RfnsV8DuCJTy8Ae-hIGAAQ">
+                <img src="{%  static 'images/facebook-flat-vector-logo-400x400.png' %}" id="fblastlogo">
+
+            </a>
+            <br><br>
+
+            <p id="reportbug" class="wow bounceInRight">Report a bug:<br><p id="jmail">mailme@gmail.com</p></p>
+            <p id="copyright">
+                © 2016 ONE WORLD All Rights Reserved.
+
+            </p>
+
+
+        </div>
+
+
+
+</body>
+</html>

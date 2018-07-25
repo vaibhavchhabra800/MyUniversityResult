@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    {%  load staticfiles %}
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="{% static 'bootstrap-3.3.7-dist/Jquery/jquery.js' %}"></script>
+
+        <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.min.js'%}"></script>
+        <link rel="stylesheet" type="text/css" href="{%  static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{%  static 'mainpagestylesheet/mainpagestyle.css' %}">
+        <link rel="stylesheet" type="text/css" href="{%  static 'user1style/user1.css' %}">
+        <title>RESULT</title>
+</head>
+<body>
+<br>
+<br>
+<br>
+<br>
+
+</div>
+<br>
+<br>
+<br>
+
+        <div class="container">
+            <div class="row">
+                <nav class="navbar navbar-default  navbar-fixed-top">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"  data-target="#nav1collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+
+                        </button>
+                    </div>
+               <div class="collapse navbar-collapse" id="nav1collapse">
+                <ul class="nav navbar-nav">
+                    <li ><a href="{% url 'mainpage' %}">Home</a> </li>
+                    <li class="active"><a href="{% url 'user1' %}">RESULT</a> </li>
+                </ul>
+             </div>
+          </nav>
+        </div>
+            </div>
+
+
+    <div class=" container overflow-x:auto" id="tableresult1">
+
+            <div id="uploadsdiv" >
+        <div class="myfilesadminfiles">Result</div>
+        <br>
+        <table id ='uploads'>
+            <tr id="tbchnggreem">
+                <th class="th">Student Name</th>
+                <th class="th">Maths</th>
+                <th class="th">Physics</th>
+                <th class="th">English</th>
+                <th class="th">Computer</th>
+            </tr>
+
+            {% for ppl in data  %}
+                    <tr class="tbhovchngcol">
+
+                        <td class="td">{{ ppl.name }}</td>
+                        <td class="td">{{ ppl.maths}}</td>
+                        <td class="td">{{ ppl.physics}}</td>
+                        <td class="td">{{ ppl.english }}</td>
+                        <td class="td">{{ ppl.computer }}</td>
+                    </tr>
+            {% endfor %}
+
+
+
+        </table>
+
+    </div>
+
+    </div>
+ <br>
+        <br>
+        <br>
+        <br>
+
+{% block content1 %}
+{% endblock %}
+
+        <br>
+        <br>
+        <br>
+
+</body>
+</html>
